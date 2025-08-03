@@ -5,22 +5,17 @@ title: "Yes, opengraph image"
 
 Testing images.
 
+![An Image from a png](spin.png){width=500}
+
 ```{python}
-# | label: fig-polar
+# | label: fig-polar-2
 # | fig-cap: "A line plot on a polar axis"
 # | classes: preview-image
+import plotly.express as px
+import plotly.io as pio
 
+pio.renderers.default = "notebook_connected+png"
 
-import numpy as np
-import matplotlib.pyplot as plt
-
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(
-  subplot_kw = {'projection': 'polar'} 
-)
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
+fig = px.scatter(x=[0, 1, 2, 3, 4], y=[0, 1, 4, 9, 16])
+fig.show()
 ```
