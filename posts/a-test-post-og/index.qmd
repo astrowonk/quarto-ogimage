@@ -1,6 +1,5 @@
 ---
-date: '2024-07-20T20:47:56-04:00'
-title: "Yes, opengraph image"
+title: "Opengraph image"
 ---
 
 Testing images.
@@ -8,13 +7,13 @@ Testing images.
 ![An Image from a png](spin.png){width=500}
 
 ```{python}
-# | label: fig-polar-2
+# | label: figure-plotly
 # | fig-cap: "A line plot on a polar axis"
 # | classes: preview-image
 import plotly.express as px
 import plotly.io as pio
 
-pio.renderers.default = "notebook_connected+png"
+pio.renderers.default = "png+notebook_connected"
 
 fig = px.scatter(x=[0, 1, 2, 3, 4], y=[0, 1, 4, 9, 16])
 fig.show()
